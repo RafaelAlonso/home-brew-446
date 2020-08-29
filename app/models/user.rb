@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :beers, through: :orders
   has_many :sold_beers, class_name: "Beer"
+
+  validates :name, presence: true
+  validates :address, presence: true, uniqueness: true
 end
