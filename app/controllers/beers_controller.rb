@@ -1,5 +1,10 @@
 class BeersController < ApplicationController
 
+  # pagina de detalhes da beer especifica
+  def show
+    @beer = Beer.find(params[:id])
+  end
+
   # formulario para pegar infos sobre a nova beer
   def new
     @beer = Beer.new
@@ -11,7 +16,7 @@ class BeersController < ApplicationController
     @beer.user = current_user
 
     if @beer.save
-      redirect_to root_path
+      redirect_to beer_path(@beer)
     else
       render :new
     end
