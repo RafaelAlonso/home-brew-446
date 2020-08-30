@@ -1,0 +1,8 @@
+<!-- criar o formulario para coletar as infos -->
+<%= simple_form_for @beer do |f| %>
+  <%= f.input :name %>
+  <%= f.input :volume %>
+  <%= f.input :unit_price %>
+
+  <%= f.submit "Crie sua cerveja" %>
+<% end %>
